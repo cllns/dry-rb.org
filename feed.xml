@@ -9,13 +9,13 @@
     <name>dry-rb community</name>
   </author>
   <entry>
-    <title>Introducing dry-files</title>
-    <link rel="alternate" href="http://dry-rb.org/news/2021/05/04/introducing-dry-files/"/>
-    <id>http://dry-rb.org/news/2021/05/04/introducing-dry-files/</id>
+    <title></title>
+    <link rel="alternate" href="http://dry-rb.org/news/2021/05/04/.html"/>
+    <id>http://dry-rb.org/news/2021/05/04/.html</id>
     <published>2021-05-04T00:00:00+00:00</published>
-    <updated>2021-12-30T06:43:44+00:00</updated>
+    <updated>2022-01-26T18:30:30+00:00</updated>
     <author>
-      <name>jodosha</name>
+      <name/>
     </author>
     <content type="html">&lt;p&gt;We talked several times about the union of &lt;a href="https://dry-rb.org"&gt;dry-rb&lt;/a&gt; + &lt;a href="https://rom-rb.org"&gt;ROM&lt;/a&gt; + &lt;a href="https://hanamirb.org"&gt;Hanami&lt;/a&gt;, well today we can share good news on that front: introducing &lt;code&gt;dry-files&lt;/code&gt;.&lt;/p&gt;
 
@@ -54,13 +54,13 @@ The other adapter is an &lt;strong&gt;in-memory file system&lt;/strong&gt;. It&a
 </content>
   </entry>
   <entry>
-    <title>dry-system 0.19 released with Zeitwerk support and more, leading the way for Hanami 2.0</title>
-    <link rel="alternate" href="http://dry-rb.org/news/2021/04/22/dry-system-0-19-released-with-zeitwerk-support-and-more-leading-the-way-for-hanami-2-0/"/>
-    <id>http://dry-rb.org/news/2021/04/22/dry-system-0-19-released-with-zeitwerk-support-and-more-leading-the-way-for-hanami-2-0/</id>
+    <title></title>
+    <link rel="alternate" href="http://dry-rb.org/news/2021/04/22/.html"/>
+    <id>http://dry-rb.org/news/2021/04/22/.html</id>
     <published>2021-04-22T00:00:00+00:00</published>
-    <updated>2021-12-30T06:43:44+00:00</updated>
+    <updated>2022-01-26T18:30:30+00:00</updated>
     <author>
-      <name>timriley</name>
+      <name/>
     </author>
     <content type="html">&lt;p&gt;We are very pleased to announce the release of dry-system 0.19.0! This release marks a huge step forward for dry-system, bringing support for &lt;a href="https://github.com/fxn/zeitwerk"&gt;Zeitwerk&lt;/a&gt; and other autoloaders, plus clearer configuration and improved consistency around component resolution for both finalized and lazy loading containers.&lt;/p&gt;
 
@@ -71,7 +71,7 @@ The other adapter is an &lt;strong&gt;in-memory file system&lt;/strong&gt;. It&a
 &lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s2"&gt;"dry/system/loader/autoloading"&lt;/span&gt;
 &lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s2"&gt;"zeitwerk"&lt;/span&gt;
 
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Container&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;Dry&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;System&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Container&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyApp::Container&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;Dry&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;System&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Container&lt;/span&gt;
   &lt;span class="n"&gt;configure&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
     &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;root&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;__dir__&lt;/span&gt;
 
@@ -89,7 +89,7 @@ The other adapter is an &lt;strong&gt;in-memory file system&lt;/strong&gt;. It&a
 &lt;p&gt;Unlike the default loader, the new &lt;code&gt;Dry::System::Loader::Autoloading&lt;/code&gt; does not &lt;code&gt;require&lt;/code&gt; files itself when loading components. Instead, it references their class constants directly, allowing the missing constant resolution to trigger the autoloading behaviour of &lt;a href="https://github.com/fxn/zeitwerk"&gt;Zeitwerk&lt;/a&gt; and other autoloaders. This is all that&amp;#39;s required to bring Zeitwerk and dry-system together! Combined with dry-system&amp;#39;s &lt;a href="https://dry-rb.org/gems/dry-system/0.17/auto-import/"&gt;auto-injector&lt;/a&gt;, you now have the best of both worlds: the convenience of auto-loading classes combined with all the loose-coupling benefits of injected dependencies.&lt;/p&gt;
 
 &lt;p&gt;The new &lt;code&gt;component_dirs&lt;/code&gt; setting also allows multiple component dirs to be added (these are where dry-system looks when loading a container&amp;#39;s components) and configured independently:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="syntax ruby"&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Container&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;Dry&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;System&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Container&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre class="syntax ruby"&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyApp::Container&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;Dry&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;System&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Container&lt;/span&gt;
   &lt;span class="n"&gt;configure&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
     &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;root&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;__dir__&lt;/span&gt;
 
@@ -120,13 +120,13 @@ The other adapter is an &lt;strong&gt;in-memory file system&lt;/strong&gt;. It&a
 </content>
   </entry>
   <entry>
-    <title>dry-schema and dry-validation 1.5.0 released</title>
-    <link rel="alternate" href="http://dry-rb.org/news/2020/03/11/dry-schema-and-dry-validation-1-5-0-released/"/>
-    <id>http://dry-rb.org/news/2020/03/11/dry-schema-and-dry-validation-1-5-0-released/</id>
+    <title></title>
+    <link rel="alternate" href="http://dry-rb.org/news/2020/03/11/.html"/>
+    <id>http://dry-rb.org/news/2020/03/11/.html</id>
     <published>2020-03-11T00:00:00+00:00</published>
-    <updated>2021-12-30T06:43:44+00:00</updated>
+    <updated>2022-01-26T18:30:30+00:00</updated>
     <author>
-      <name>solnic</name>
+      <name/>
     </author>
     <content type="html">&lt;p&gt;We&amp;#39;re happy to announce the release of dry-schema 1.5.0! It comes with plenty of new features, fixes, and general improvements. Here are some of the highlights.&lt;/p&gt;
 &lt;h2 id="support-for-composing-schemas" class="hd"&gt;&lt;a name="support-for-composing-schemas" class="anchor" href="#support-for-composing-schemas"&gt;            &lt;svg aria-hidden="true" height="16" width="16" version="1.1" viewBox="0 0 16 16"&gt;
@@ -259,13 +259,13 @@ The other adapter is an &lt;strong&gt;in-memory file system&lt;/strong&gt;. It&a
 </content>
   </entry>
   <entry>
-    <title>Introducing dry-effects</title>
-    <link rel="alternate" href="http://dry-rb.org/news/2019/10/03/introducing-dry-effects/"/>
-    <id>http://dry-rb.org/news/2019/10/03/introducing-dry-effects/</id>
+    <title></title>
+    <link rel="alternate" href="http://dry-rb.org/news/2019/10/03/.html"/>
+    <id>http://dry-rb.org/news/2019/10/03/.html</id>
     <published>2019-10-03T00:00:00+00:00</published>
-    <updated>2021-12-30T06:43:44+00:00</updated>
+    <updated>2022-01-26T18:30:30+00:00</updated>
     <author>
-      <name>flash-gordon</name>
+      <name/>
     </author>
     <content type="html">&lt;p&gt;Today we&amp;#39;re introducing another gem and supercharging our toolset: say hello to dry-effects!&lt;/p&gt;
 
@@ -413,13 +413,13 @@ The other adapter is an &lt;strong&gt;in-memory file system&lt;/strong&gt;. It&a
 </content>
   </entry>
   <entry>
-    <title>dry-validation 1.0.0 released</title>
-    <link rel="alternate" href="http://dry-rb.org/news/2019/06/10/dry-validation-1-0-0-released/"/>
-    <id>http://dry-rb.org/news/2019/06/10/dry-validation-1-0-0-released/</id>
+    <title></title>
+    <link rel="alternate" href="http://dry-rb.org/news/2019/06/10/.html"/>
+    <id>http://dry-rb.org/news/2019/06/10/.html</id>
     <published>2019-06-10T00:00:00+00:00</published>
-    <updated>2021-12-30T06:43:44+00:00</updated>
+    <updated>2022-01-26T18:30:30+00:00</updated>
     <author>
-      <name>solnic</name>
+      <name/>
     </author>
     <content type="html">&lt;p&gt;We&amp;#39;re very happy to announce the release of dry-validation 1.0.0!&lt;/p&gt;
 
@@ -604,13 +604,13 @@ The other adapter is an &lt;strong&gt;in-memory file system&lt;/strong&gt;. It&a
 </content>
   </entry>
   <entry>
-    <title>dry-types and dry-struct 1.0.0 released</title>
-    <link rel="alternate" href="http://dry-rb.org/news/2019/04/23/dry-types-and-dry-struct-1-0-0-released/"/>
-    <id>http://dry-rb.org/news/2019/04/23/dry-types-and-dry-struct-1-0-0-released/</id>
+    <title></title>
+    <link rel="alternate" href="http://dry-rb.org/news/2019/04/23/.html"/>
+    <id>http://dry-rb.org/news/2019/04/23/.html</id>
     <published>2019-04-23T00:00:00+00:00</published>
-    <updated>2021-12-30T06:43:44+00:00</updated>
+    <updated>2022-01-26T18:30:30+00:00</updated>
     <author>
-      <name>solnic</name>
+      <name/>
     </author>
     <content type="html">&lt;p&gt;We&amp;#39;re very happy to announce the release of &lt;code&gt;dry-types&lt;/code&gt; and &lt;code&gt;dry-struct&lt;/code&gt; 1.0.0! &lt;code&gt;dry-types&lt;/code&gt; is one of the most important and foundational gem in the dry-rb organization. It powers attributes in &lt;code&gt;dry-struct&lt;/code&gt;, handles coercion in &lt;code&gt;dry-schema&lt;/code&gt;, and is used extensively in &lt;a href="https://rom-rb.org/"&gt;&lt;code&gt;rom-rb&lt;/code&gt;&lt;/a&gt;&amp;#39;s relation schemas. With this 1.0.0 release, we hope it will be adopted by more projects. &lt;code&gt;dry-struct&lt;/code&gt; was originally extracted from &lt;code&gt;dry-types&lt;/code&gt; and it provides the famous &lt;code&gt;attribute&lt;/code&gt; API for your PORO objects.&lt;/p&gt;
 
